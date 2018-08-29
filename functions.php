@@ -1,7 +1,7 @@
 <?php
 
 function everestinvestments_script_enqueue() {
-    // Styles  Test  
+    // Styles  
     wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '1.0.0');
     wp_enqueue_style( 'theme-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700', array(), '1.0.0');
     wp_enqueue_style( 'revolution-extralayers', get_template_directory_uri() . '/assets/plugins/slider.revolution/css/extralayers.css', array(), '1.0.0');
