@@ -1,14 +1,25 @@
 <?php
 
 function everestinvestments_script_enqueue() {
-    // Styles
-    wp_enqueue_style( 'customstyle', get_template_directory_uri() . '/css/custom.css', array(), '1.0.0');
+    // Styles    
     wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '1.0.0');
+    wp_enqueue_style( 'theme-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700', array(), '1.0.0');
+    wp_enqueue_style( 'revolution-extralayers', get_template_directory_uri() . '/assets/plugins/slider.revolution/css/extralayers.css', array(), '1.0.0');
+    wp_enqueue_style( 'revolution-settings', get_template_directory_uri() . '/assets/plugins/slider.revolution/css/settings.css', array(), '1.0.0');    
+    wp_enqueue_style( 'essentials', get_template_directory_uri() . '/assets/css/essentials.css', array(), '1.0.0');
+    wp_enqueue_style( 'layout', get_template_directory_uri() . '/assets/css/layout.css', array(), '1.0.0');
+    wp_enqueue_style( 'header-1', get_template_directory_uri() . '/assets/css/header-1.css', array(), '1.0.0');
+    wp_enqueue_style( 'green', get_template_directory_uri() . '/assets/css/color_scheme/green.css', array(), '1.0.0');
+    wp_enqueue_style( 'customstyle', get_template_directory_uri() . '/css/custom.css', array(), '1.0.0');
 
     // Scripts
-    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '1.0.0', true);    
-    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array(), '1.0.0', true);
-    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/custom.js', array(), '1.0.0', true);
+    wp_deregister_script('jquery');
+    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/plugins/jquery/jquery-3.2.1.min.js', array(), '1.0.0', true);        
+    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), array(), '1.0.0', true);
+    wp_enqueue_script( 'revolution-tools', get_template_directory_uri() . '/assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js', array(), array(), '1.0.0', true);
+    wp_enqueue_script( 'revolution-slider', get_template_directory_uri() . '/assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js', array(), array(), '1.0.0', true);        
+    wp_enqueue_script( 'revolution-slider-demo', get_template_directory_uri() . '/assets/js/view/demo.revolution_slider.js', array(), array(), '1.0.0', true);        
+    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/custom.js', array(), '1.0.0', true);    
     
 }
 
@@ -22,16 +33,15 @@ function theme_setup() {
 
 add_action('init', 'theme_setup');
 
-add_theme_support('custom-background');
-add_theme_support('custom-header');
 add_theme_support('post-thumbnails');
 add_theme_support('post-formats', array('aside','image','video'));
 
-// Filter to add nav-link class to a elements on navigation
-add_filter( 'nav_menu_link_attributes', function($atts) {
-    $atts['class'] = "nav-link";
-    return $atts;
-});
+
+// Filter to add nav-link class to a elements on navigation ** Use this if switching back to bootstrap 4 theme **
+// add_filter( 'nav_menu_link_attributes', function($atts) {
+//     $atts['class'] = "nav-link";
+//     return $atts;
+// });
 
 /*
     ================================
