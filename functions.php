@@ -36,13 +36,6 @@ add_action('init', 'theme_setup');
 add_theme_support('post-thumbnails');
 add_theme_support('post-formats', array('aside','image','video'));
 
-
-// Filter to add nav-link class to a elements on navigation ** Use this if switching back to bootstrap 4 theme **
-// add_filter( 'nav_menu_link_attributes', function($atts) {
-//     $atts['class'] = "nav-link";
-//     return $atts;
-// });
-
 /*
     ================================
     Sidebar function
