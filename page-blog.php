@@ -6,7 +6,8 @@
 get_header();
 
 ?>
-
+<section>
+    <div class="container">
 <?php
 
 if (have_posts()):
@@ -20,5 +21,7 @@ if (have_posts()):
 endif;
 
 ?>
+    </div>
+</section>
 
 <?php get_footer();?>
