@@ -43,7 +43,7 @@ function widget_setup() {
     register_sidebar(
         array(
             'name' => 'Sidebar',
-            'id' => 'Sidebar-1',
+            'id' => 'sidebar-1',
             'class' => 'custom',
             'description' => 'Standard Sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',

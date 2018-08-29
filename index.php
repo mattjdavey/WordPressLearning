@@ -13,5 +13,5 @@ if (have_posts()):
 endif;
 
 ?>
-
+<?php get_sidebar();?>
 <?php get_footer();?>
