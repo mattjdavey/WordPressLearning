@@ -33,9 +33,10 @@
                             <i class="fa fa-search"></i>
                         </a>
                         <div class="search-box">
-                            <form action="page-search-result-1.html" method="get">
+                            <form role="search" method="get" action="<?php echo home_url('/'); ?>">
                                 <div class="input-group">
-                                    <input type="text" name="src" placeholder="Search" class="form-control" />
+                                    <!-- <input type="text" name="src" placeholder="Search" class="form-control" /> -->
+                                    <?php get_search_form(); ?>
                                     <span class="input-group-btn">
                                         <button class="btn btn-primary" type="submit">Search</button>
                                     </span>
@@ -50,7 +51,7 @@
 
 
                 <!-- Logo -->
-                <a class="logo float-left" href="index.html">
+                <a class="logo float-left" href="/stage/">
                     WORDPRESS LEARNING
                 </a>
 

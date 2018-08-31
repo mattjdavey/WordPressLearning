@@ -33,8 +33,14 @@ function theme_setup() {
 
 add_action('init', 'theme_setup');
 
+/*
+    ================================
+    Theme support function
+    ================================
+*/
 add_theme_support('post-thumbnails');
 add_theme_support('post-formats', array('aside','image','video'));
+add_theme_support('html5', array('search-form'));
 
 /*
     ================================
