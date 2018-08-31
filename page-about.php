@@ -1,11 +1,12 @@
-<?php 
+<?php
 /*
-    Template Name: Blog
+Template Name: About
 */
 
-get_header();
+    get_header();
 
 ?>
+
 <section>
     <div class="container">
         <div class="row">

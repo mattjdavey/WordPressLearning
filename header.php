@@ -9,39 +9,63 @@
     <?php wp_head(); ?>
 </head>
 
-<?php
-
-    if (is_front_page()) :
-        $awesome_classes = array('awesome-class', 'my-class');
-    else :
-        $awesome_classes = array('no-awesome-class');
-    endif;
-
-?>
-
-<body <?php body_class($awesome_classes); ?> >
+<body class="smoothscroll enable-animation" >
 
 <div id="wrapper">
-    <div id="header" class="navbar-toggleable-md sticky shadow-after-3 clearfix">
 
+    <div id="header" class="navbar-toggleable-md sticky shadow-after-3 clearfix">
+            
         <!-- TOP NAV -->
         <header id="topNav">
             <div class="container">
-                
+                    
+                <!-- Mobile Menu Button -->
                 <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <nav class="nav-main">
-                    <?php
-                        $args = array(
-                        'menu_id' => 'topMain',
-                        'menu_class' => 'nav nav-pills nav-main',
-                        'theme_location' => 'primary',
-                        );
-                        wp_nav_menu($args);
-                    ?>
-                </nav>
+                <!-- BUTTONS -->
+                <ul class="float-right nav nav-pills nav-second-main">
+
+                    <!-- SEARCH -->
+                    <li class="search">
+                        <a href="javascript:;">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <div class="search-box">
+                            <form action="page-search-result-1.html" method="get">
+                                <div class="input-group">
+                                    <input type="text" name="src" placeholder="Search" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit">Search</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div> 
+                    </li>
+                    <!-- /SEARCH -->
+
+                </ul>
+                <!-- /BUTTONS -->
+
+
+                <!-- Logo -->
+                <a class="logo float-left" href="index.html">
+                    WORDPRESS LEARNING
+                </a>
+
+                <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                    <nav class="nav-main">
+                        <?php
+                            $args = array(
+                            'menu_id' => 'topMain',
+                            'menu_class' => 'nav nav-pills nav-main',
+                            'theme_location' => 'primary',
+                            );
+                            wp_nav_menu($args);
+                        ?>
+                    </nav>
+                </div>
             </div>
         </header>
         <!-- TOP NAV -->
