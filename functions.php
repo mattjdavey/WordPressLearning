@@ -72,6 +72,13 @@ add_action('widgets_init', 'widget_setup');
 
 /*
     ================================
+    Include Walker file
+    ================================
+*/
+require get_template_directory() . '/inc/walker.php';
+
+/*
+    ================================
     Head function
     ================================
 */

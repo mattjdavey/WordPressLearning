@@ -60,9 +60,10 @@
                     <nav class="nav-main">
                         <?php
                             $args = array(
-                            'menu_id' => 'topMain',
-                            'menu_class' => 'nav nav-pills nav-main',
-                            'theme_location' => 'primary',
+                                'menu_id' => 'topMain',
+                                'menu_class' => 'nav nav-pills nav-main',
+                                'theme_location' => 'primary',
+                                'walker' => new Walker_Nav_Primary()
                             );
                             wp_nav_menu($args);
                         ?>
