@@ -1,5 +1,10 @@
 <?php
 
+/*
+    ================================
+    Include Scripts
+    ================================
+*/
 function everestinvestments_script_enqueue() {
     // Styles  
     wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '1.0.0');
@@ -65,6 +70,15 @@ function widget_setup() {
 }
 add_action('widgets_init', 'widget_setup');
 
+/*
+    ================================
+    Head function
+    ================================
+*/
+function theme_remove_version() {
+    return '';
+}
+add_filter('the_generator', 'theme_remove_version');
 
 
 ?>

@@ -12,9 +12,17 @@
                         <?php get_template_part('content', 'blog'); ?>
                         
                         <?php 
-                        endwhile;
-                    endif;
-                ?>
+                        endwhile; ?>
+
+                        <div class="col-xs-6 text-left">
+                            <?php next_posts_link('<< Older Posts') ?>
+                        </div>
+
+                        <div class="col-xs-6 text-right">
+                            <?php previous_posts_link('Newer Posts >>') ?>
+                        </div>
+
+                    <?php endif; ?>
             </div>
             <div class="col-xs-12 col-sm-4">
                 <?php get_sidebar();?>
