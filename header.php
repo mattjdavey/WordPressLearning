@@ -38,9 +38,9 @@
                                 <div class="input-group">
                                     <!-- <input type="text" name="src" placeholder="Search" class="form-control" /> -->
                                     <?php get_search_form(); ?>
-                                    <span class="input-group-btn">
+                                    <!-- <span class="input-group-btn">
                                         <button class="btn btn-primary" type="submit">Search</button>
-                                    </span>
+                                    </span> -->
                                 </div>
                             </form>
                         </div> 

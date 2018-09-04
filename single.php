@@ -1,5 +1,11 @@
 <?php get_header(); ?>
+<section class="page-header page-header-xs dark">
+	<div class="container">
 
+		<h1><?php wp_title(''); ?></h1>
+		
+	</div>
+</section>
 <section>
     <div class="container">
         <div class="row">

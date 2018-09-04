@@ -6,7 +6,13 @@ Template Name: About
     get_header();
 
 ?>
+<section class="page-header page-header-xs dark">
+	<div class="container">
 
+		<h1><?php wp_title(''); ?></h1>
+		
+	</div>
+</section>
 <section>
     <div class="container">
         <div class="row">
@@ -15,8 +21,7 @@ Template Name: About
                     if (have_posts()):
 
                         while (have_posts()): the_post();?>
-
-                        <h3><?php the_title();?> </h3>
+                        
                         <p><?php the_content();?></p>
                         
                         <?php 
