@@ -14,7 +14,7 @@ get_header(); ?>
         if ( $loop->have_posts() ) : 
             while( $loop->have_posts() ): $loop->the_post(); ?>
 
-                <?php get_template_part('content', 'archive'); ?>
+                <?php get_template_part('content', 'portfolio'); ?>
 
             <?php endwhile;
 

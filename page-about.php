@@ -16,7 +16,7 @@ Template Name: About
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-8">
+            <div class="col-xs-12 col-sm-12">
                 <?php
                     if (have_posts()):
 
@@ -29,9 +29,7 @@ Template Name: About
                     endif;
                 ?>
             </div>
-            <div class="col-xs-12 col-sm-4">
-                <?php get_sidebar();?>
-            </div>
+           
         </div>
     </div>
 </section>

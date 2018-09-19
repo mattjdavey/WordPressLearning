@@ -19,7 +19,33 @@
                         <?php if (has_post_thumbnail() ) : ?>
                             <div class="float-right"><?php the_post_thumbnail('thumbnail'); ?></div>
                         <?php endif; ?>
-                        <small><?php the_category(' '); ?> || <?php the_tags(); ?> || <?php edit_post_link(); ?></small>
+                        
+                        <small>
+                        <?php 
+                            $terms_list = wp_get_post_terms($post->ID, 'field'); 
+
+
+                            $i = 0;
+                            foreach ($terms_list as $term) { $i++;
+                                if( $i > 1 ) {
+                                    echo ', ';
+                                }
+                                echo $term ->name;
+                            }
+                        ?> || 
+                        <?php 
+                        $terms_list = wp_get_post_terms($post->ID, 'software'); 
+
+
+                        $i = 0;
+                        foreach ($terms_list as $term) { $i++;
+                            if( $i > 1 ) {
+                                echo ', ';
+                            }
+                            echo $term ->name;
+                        }
+                        ?>   
+                        </small>                     
 
                         <p><?php the_content();?></p>
                         
