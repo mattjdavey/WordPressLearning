@@ -7,33 +7,15 @@
     <div class="col-md-8">
         <?php the_title( sprintf('<h1 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
         <small>Posted on: 
-        <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?>, in <?php 
-            $terms_list = wp_get_post_terms($post->ID, 'field'); 
-
-
-            $i = 0;
-            foreach ($terms_list as $term) { $i++;
-                if( $i > 1 ) {
-                    echo ', ';
-                }
-                echo $term ->name;
+        <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?>, in 
+        <?php echo smarty_get_terms( $post->ID, 'field' ); ?>
+        <?php if (smarty_get_terms($post->ID, 'software') != null) { echo ' || ' . smarty_get_terms( $post->ID, 'software' ); }  ?>
+        <?php 
+            if ( current_user_can('manage_options') ) {
+                echo ' || ';
+                edit_post_link();
             }
         ?>
-        <?php 
-            $terms_list = wp_get_post_terms($post->ID, 'software'); 
-            if ($terms_list != null) {
-                echo ' || ';
-            }
-
-
-            $i = 0;
-            foreach ($terms_list as $term) { $i++;
-                if( $i > 1 ) {
-                    echo ', ';
-                }
-                echo $term ->name;
-            }
-        ?>   
         </small>
 
         <hr />

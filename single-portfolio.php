@@ -21,30 +21,14 @@
                         <?php endif; ?>
                         
                         <small>
-                        <?php 
-                            $terms_list = wp_get_post_terms($post->ID, 'field'); 
-
-
-                            $i = 0;
-                            foreach ($terms_list as $term) { $i++;
-                                if( $i > 1 ) {
-                                    echo ', ';
+                            <?php echo smarty_get_terms( $post->ID, 'field' ); ?>
+                            <?php if (smarty_get_terms($post->ID, 'software') != null) { echo ' || ' . smarty_get_terms( $post->ID, 'software' ); }  ?>                     
+                            <?php 
+                                if ( current_user_can('manage_options') ) {
+                                    echo ' || ';
+                                    edit_post_link();
                                 }
-                                echo $term ->name;
-                            }
-                        ?> || 
-                        <?php 
-                        $terms_list = wp_get_post_terms($post->ID, 'software'); 
-
-
-                        $i = 0;
-                        foreach ($terms_list as $term) { $i++;
-                            if( $i > 1 ) {
-                                echo ', ';
-                            }
-                            echo $term ->name;
-                        }
-                        ?>   
+                            ?>
                         </small>                     
 
                         <p><?php the_content();?></p>
